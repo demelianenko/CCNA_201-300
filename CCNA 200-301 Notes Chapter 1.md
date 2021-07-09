@@ -83,3 +83,40 @@ The steps that are taken when a pc sends a packet to a router.
 
 ## Data Encapsulation Terminology 
 
+When sending data each layer adds its own header to the data given by the the layer above it. that process is called data encapsulation, putting data between header and a trailer. 
+
+1. create and encapsulate the application data with any required application layer headers. for example the HTTP OK message can be returned in the HTTP header followed by part of the contents of the web page.
+2. afterwards the transport layer would add its TCP or UDP header to the packet.
+3. furthermore the transport layer inside a IP header with the source and destination IP address.
+4. data link header and trailer is added on top of the network layer.
+5. the packet is transmitted over the physical cable. 
+
+### names of TCP/IP Messages 
+
+-  TCP | DATA - Segment (Transport Layer)
+- IP | DATA - Packet (Network Layer)
+- Link header | DATA | Link trailer - Frame (Data-Link)
+
+### OSI Versus TCP/IP
+
+| OSI          | TCP/IP           |
+| ------------ | ---------------- |
+| Application  | Application      |
+| Presentation | Application      |
+| Session      | Application      |
+| Transport    | Transport        |
+| Network      | Network/Internet |
+| Data-Link    | Data-Link        |
+| Physical     | Physical         |
+
+### OSI DATA Encapsulation Terminology 
+
+-  L7H | | DATA - L7PDU
+- L6H | DATA - L6PDU
+- L5H | DATA - L5PDU
+- L4H | DATA - L4PDU
+- L3H | DATA - L3PDU
+- L2H | DATA | L2T - L2PDU
+
+
+
