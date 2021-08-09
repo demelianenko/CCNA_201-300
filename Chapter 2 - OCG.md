@@ -1,4 +1,4 @@
-# Chapter 2 - OCG
+# CCNA 200-301 Notes Chapter 2
 
 ------
 
@@ -45,8 +45,6 @@ Where unlike Straight-Through the pines are opposite so  1 to 3 and 2 to 6.
 Crossover: if the end points transmit on the same pin pair
 Straight-Through: if the end points transmit  on opposite pin pairs
 
- 
-
 | Transmits on Pins 1,2  | Transmits on Pins 3,6 |
 | ---------------------- | --------------------- |
 | PC                     | Hubs                  |
@@ -58,3 +56,28 @@ For devices in the same column you would use crossover and for devices in differ
 ### UTP Cabling pinouts For  1000BASE-T (1Gib)
 
 1Gib unlike base 10 and base 100 uses 4 pairs for transmitting and 4 pairs for receiving
+
+## Building Physical LAN's using Fiber
+
+### Fiber Cabling Transmission Concepts
+
+There are 2 fiber mode multi mode and single mode.
+While  multimode allow there to be angles in the fiber cable where the light bounces off 
+
+Compered single mode fiber has much smaller core than the multi mode and send the light in a single angle inside the cable.
+Multimode improves the maximum distance compared to copper cables.
+
+To transmit between 2 devices you need 2 cables 
+
+| Criteria                                | UTP  | Multimode | Single-Mode |
+| --------------------------------------- | ---- | --------- | ----------- |
+| Relative cost of cabling                | Low  | Medium    | Medium      |
+| Relative cost of switch port            | Low  | Medium    | High        |
+| Max Distance                            | 100m | 500m      | 40km        |
+| interface with data sent over the cable | some | None      | None        |
+| Risk of copying cable transmission      | Some | None      | None        |
+
+## Ethernet data-Link Protocol 
+
+#### Ethernet Addressing
+
