@@ -63,5 +63,28 @@ show interface status
 show interfaces fa0/13
 ```
 
-the speed of 10mb or 100 can only use half duplex any higher will use full duplex
+### Duplex miss match
 
+the speed of 10mb or 100 by default uses half duplex 
+if for some reason auto negation is not enabled on both interfaces the link will default to the switches lowest speed and duplex.
+
+So if one side of a gig connection is set to use 100mb the other side that uses auto negations would use 100mb and half duplex.
+As a result when a interfaces fails to auto negotiate it will fall back on to its defaults resulting in a chance to miss match duplex.
+
+Unlike with a  speed miss match (if you set one side to 100 and the other to 10) duplex miss match will still let the link work (up/up)
+
+## Interface Counters
+
+| counter name    | reason                                                       | Cause                      |
+| --------------- | ------------------------------------------------------------ | -------------------------- |
+| Runts           | did not meet the minimum frame size requirements  (64 bytes) | can be collisions          |
+| Giants          | exceeds the maximum frame size (1518 bytes)                  |                            |
+| Input Errors    | a total of all the error counters (runts,giants,no buffer,CRC,frame,overrun,) | when an error is detected  |
+| CRC             | did not pass the FCS check                                   | can be collisions          |
+| Frame           | received frames have an illegal format                       | can be collisions          |
+| Packet output   | Total number of packets forwarded out of the interface       | when a packet is forwarded |
+| Collisions      | a collisions occurs when the interface try's to transmits the frame |                            |
+| Late Collisions | the collisions happens after the 64th byte of the frame has been transmitted (properly working lan it should occur before the 64th byte) | duplex mismatch            |
+
+* if CRC grow but the collisions don't it probably is a physical cable problem
+* if Collisions grow on a half duplex interface it is most likely to a duplex miss match as one side of the cable sends after the 64th byte as its full duplex.
