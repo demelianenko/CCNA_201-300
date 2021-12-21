@@ -98,3 +98,86 @@ transport input telnet
 transport input ssh
 ```
 
+
+
+## IP settings
+
+The switch can have an ip if it is assigned to a vlan, the vlan needs to have physical ports assigned to it for it to work.
+
+in order to configure ip address you would need to be in the config mode using:
+
+```
+config t
+```
+
+after wards you would need be in interface config using:
+
+```
+interface vlan 1
+```
+
+assignee ip address using:
+
+```
+ip address "192.168.1.200" "255.255.255.0"
+no shutdown
+```
+
+we could let dhcp give the ip address to the switch using the following :
+
+```
+config t
+interface vlan 1
+ip address dhcp
+no shutdown
+```
+
+we could check the ip address with a few ways:
+
+- dhcp:
+
+  ```
+  show dchp lease
+  ```
+
+- vlan:
+
+  ```
+  show interface vlan 1
+  ```
+
+
+
+## Useful other commands
+
+- to define how many lines of commands will be in the history buffer:
+
+  ```
+  history size "99"
+  ```
+
+- to see history:
+
+  ```
+  show history
+  ```
+
+- to not see random pop ups:
+
+  ```
+  no logging console
+  ```
+
+- or the more common to tell it to not do it randomly:
+
+  ```
+  logging synchronous
+  ```
+
+- to now look for the domain if you miss type:
+
+  ```
+  no ip domain-lookup
+  ```
+
+  

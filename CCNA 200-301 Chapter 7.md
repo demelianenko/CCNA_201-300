@@ -1,8 +1,6 @@
 # CCNA 200-301 Chapter 7
 
 
-
-
 ## Commands to config a switch
 
 
