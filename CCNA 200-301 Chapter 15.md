@@ -181,3 +181,36 @@ Several Combination of interface status code exist:
 
 ### Router Interface IP Address
 
+Cisco router needs some configuration before they are able to preform their duty. Unlike switch that can work out of the box. Before the router can start routing packets, it would need at least one interface that is enabled and have an IP address assigned to it.
+
+- Most Cisco router interfaces default to being shutdown(off), and would need the 
+
+  ```
+  no shutdown
+  ```
+
+  Command used on them to enable them.
+
+- Cisco Routers to not route packets out of the interface until the interface IP address and mask have been set. By default no IP address or mask are set to any interface
+
+- Cisco Routers try to route IP packets to any interface that is up/up (Line status and Protocol status) and have their IP address and mask set.
+
+| Command                      | Line of output per interface | IP configuration Listed | Interface Status Listed? |
+| ---------------------------- | ---------------------------- | ----------------------- | ------------------------ |
+| show ip interface            | 1                            | Address                 | Yes                      |
+| show protocols [type number] | 1 or 2                       | Address/mask            | Yes                      |
+| show interfaces              | Many                         | Address/mask            | Yes                      |
+
+### Router Auxiliary Port
+
+Both routers and switches have a console port that would allow to connect to them and configure them even without any interfaces or vlan's set with IP address. Most Cisco router also have a Aux Port, typically means to serve to make a phone call and connect to the router to issue commands. As an alternative to the Console port or ssh or tel net.
+
+It works exactly like the console port but, the port will be connected to a modem and the modem will be connected to phone line. Allowing a network engineer to use a terminal emulator and a modem to call and access the router CLI over the AUX port. 
+
+To configure a Aux port use the
+
+```
+line aux 0 #or another numebr
+```
+
+Just like the console port or SSH login and password can be used.

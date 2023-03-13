@@ -167,7 +167,7 @@ RSTP behaves at if vlans do not exist while RPVST+ read and understand the vlan 
   3. you can use the 
   
      ``` 
-     show etherchaneel "number" summary
+     show etherchaneel summary
      ```
   
      to view the etherchannel info.

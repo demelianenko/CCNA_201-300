@@ -1,7 +1,5 @@
 # CCNA 200-301 Chapter 5
 
-
-
 ##  Switching Logic
 
 Lan switching work on a mac source and destination logic as switches are layer 2 devices (usually).

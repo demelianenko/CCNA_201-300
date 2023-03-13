@@ -1,6 +1,6 @@
 # Chapter 4 CCNA 200-301
 
-## default console port
+## Default console port
 
 ###  when using any remote connection
 

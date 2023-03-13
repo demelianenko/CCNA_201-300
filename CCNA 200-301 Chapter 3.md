@@ -1,7 +1,5 @@
 # CCNA 200-301 Chapter 3
 
-
-
 ## WAN NETWORKS
 
 ### Leaded-Line Wans

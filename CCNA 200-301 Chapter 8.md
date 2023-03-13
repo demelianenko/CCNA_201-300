@@ -203,4 +203,4 @@ switchport trunk allowed vlan {add | all | except | remove} vlan
 
 ### Native vlan mismatch
 
-Because the switch wont add headers to the native vlan, if the 2 switch's have 2 different vlans configured for example Switch A has vlan 1 and Switch B has vlan 2 after sending the packet switch B will forward the frame to vlan 2 because it assumes its the native one. SO make sure the Native vlan matches on the switches 
+Because the switch wont add headers to the native vlan, if the 2 switch's have 2 different vlans configured for example Switch A has vlan 1 and Switch B has vlan 2 after sending the packet switch B will forward the frame to vlan 2 because it assumes its the native one. SO make sure the Native vlan matches on the switche
